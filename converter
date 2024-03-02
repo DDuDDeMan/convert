@@ -1,0 +1,25 @@
+import requests
+from bs4 import BeautifulSoup
+
+def get_html(url):
+    response = requests.get(url)
+    return response.text
+
+
+def parce_hacker_news(html):
+    soup = BeautifulSoup(html, 'html.parser')
+    articles = soup.find_all('strong', class_='AZN-USD')
+    convert = []
+
+    for j in range:
+        title = j.find('').text
+        convert=list(title)
+        return convert
+
+url = 'https://norealconvert.huh'
+html = get_html(url)
+curs = parce_hacker_news(html)
+print(curs)
+n=int(input())
+m=n*int(curs)
+print(f"Your capital is {m}")
